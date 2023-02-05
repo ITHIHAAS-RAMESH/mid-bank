@@ -1,0 +1,19 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5;
+    padding: 10px;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+  }
+  

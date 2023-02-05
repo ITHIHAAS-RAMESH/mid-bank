@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Lato';font-size: 22px;
+}
+      body{
+        margin: 0px;
+      }
+    header {
+        background-color: rgba(8, 89, 181, 0.822);
+        height: 25px;
+        color: #fff;
+        margin: 0px;
+        padding:15px;
+        text-align: center;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.415);
+      }
+      header nav {
+        display: inline-block;
+      }
+      header nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin-left: 200px;
+      }
+      header nav ul li {
+        display: inline-block;
+      }
+      header nav ul li a {
+        color: rgb(255, 255, 255);
+        font-size: 21px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-justify: auto;
+        text-decoration: none;
+        margin-left: 10px;
+        padding: 20px 20px;
+        
+      }
+     .uname{
+        color: rgb(255, 255, 255);
+        font-size: 21px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-justify: auto;
+        position: relative;
+        text-decoration: none;
+        left: 250px;
+     }
+     
+    .logo-img{
+      float: left;
+      position: relative;
+      left:10px;
+      top:-12px;
+  }
+  .tradingview-widget-container{
+    position: relative;
+    top : 10px;
+  }
+      </style>
+</head>
+<body>
+    <header>
+        
+        <img class="logo-img" src="i.png" width="50" height="50" ALT="align box" ALIGN=CENTER>
+        <nav>
+          <ul>
+            
+            <li><a href="\info">Account Info</a></li>
+            
+            <li><a href="\send">Send Money</a>
+             <li><a href="\">Logout</a></li>
+             <li><a class="uname">Welcome, <%= name %></a></li>
+            </ul>    
+        </nav>
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/" rel="noopener" target="_blank"></a></div>
+  
+</div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "in"
+}
+  </script>
+<!-- TradingView Widget END -->
+      </div>
+      </header>

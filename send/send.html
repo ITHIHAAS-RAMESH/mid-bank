@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          display: flex;
+          align-items: center;
+          height: 100vh;
+        }
+        .form-container {
+          width: 340px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        h1 {
+          font-size: 32px;
+          font-weight: 500;
+          margin: 24px 0;
+        }
+        p {
+          font-size: 40px;
+          color: #000000;
+          margin: 16px 0;
+          position: relative;
+          top: -100px;
+        }
+        .error{
+            font-size: 30px;
+          color: #f16868;
+          margin: 16px 0;
+          top: -30px;
+        }
+        .success{
+            font-size: 30px;
+          color: #81f168;
+          margin: 16px 0;
+          top: -30px;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          top: -50px;
+        }
+        form label {
+          font-size: 25px;
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        form input {
+          width: 100%;
+          height: 44px;
+          padding: 0 12px;
+          box-sizing: border-box;
+          border: 1px solid #d9d9d9;
+          border-radius: 4px;
+          font-size: 16px;
+          margin-bottom: 16px;
+        }
+        form input[type="submit"] {
+          background-color: #3897f0;
+          color: white;
+          font-size: 16px;
+          font-weight: 500;
+          height: 44px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+          background-color: #2b7de9;
+        }
+        .signup-link {
+          font-size: 14px;
+          color: #8e8e8e;
+          margin-top: 16px;
+        }
+      </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+       
+        <div class="form-container">
+            <p>Available Balance: ₹<%= balance %></p>
+          <form action="/send" method="post">
+            <label for="Sendusername">Send To</label>
+            <input type="text" id="Sendusername" name="Sendusername" required>
+            <label for="Amount">Amount</label>
+            <input type="number" id="amount" name="amount" required>
+            <input type="submit" value="Send">
+          </form>
+           <p class="error"><%= error %></p>
+           <p class ="success"><%= success%></p>
+        </div>
+      </div>
+    
+</body>
+</html>
