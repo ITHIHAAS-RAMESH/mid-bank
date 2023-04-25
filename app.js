@@ -7,6 +7,7 @@ const sendRoute = require('./routers/send')
 const connectDB = require('./database/db')
 const { successRender } = require('./controllers/send')
 const infoRoute = require('./routers/info')
+const PORT = process.env.PORT || 3030;
 require('dotenv').config()
 
 app.use(express.static('./public'))
@@ -28,7 +29,7 @@ app.use('/info',infoRoute)
 const start = async () =>{
     try {
         await connectDB(process.env.MONGO_DB)
-        app.listen(8000,console.log(`server is listening to 8000...`))
+        app.listen(PORT,console.log(`server is listening to 8000...`))
     } catch (error) {
         console.log(error)
     }
@@ -36,5 +37,5 @@ const start = async () =>{
 
 start()
 
-app.listen(8080)
+app.listen(PORT)
 
